@@ -44,6 +44,22 @@ export default {
   methods: {
     login : function() {
       this.onRequest = true
+      RestUtil.post("/rest/auth/login", this.data)
+        .then( resp => {
+            this.alert.message = resp.data.message;
+            this.alert.show = true;
+            this.alert.type = "info";
+            this.$router.push("/");
+        })
+        .catch( error => {
+           this.onRequest = false;
+           this.alert.message = error.response.data.message;
+           this.alert.show = true;
+           this.alert.type = "warning";
+           setTimeout(function(){
+              this.alert.show = false;
+           }.bind(this), 1000);
+         });
     }
   }
 }
