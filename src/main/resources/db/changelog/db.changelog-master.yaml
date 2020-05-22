@@ -32,5 +32,5 @@ databaseChangeLog:
                   value: root
               - column:
                   name: PASSWORD
-                  value: $2a$10$Vezo7p7ulOfDM0mOIHoqIeABvXes/E2j9Ru/zlGXpEIJRw1bmjlry
+                  value: $2a$04$t4smKHHhhFOrasYoYjTm4uuc0hy1o1SYqZkz9cMFPC6wttmkETFim
             tableName:  CERT_USER
