@@ -49,7 +49,7 @@ export default {
             this.alert.message = resp.data.message;
             this.alert.show = true;
             this.alert.type = "info";
-            this.$router.push("/");
+            this.$router.push("/admin");
         })
         .catch( error => {
            this.onRequest = false;
@@ -58,7 +58,7 @@ export default {
            this.alert.type = "warning";
            setTimeout(function(){
               this.alert.show = false;
-           }.bind(this), 1000);
+           }.bind(this), 5000);
          });
     }
   }

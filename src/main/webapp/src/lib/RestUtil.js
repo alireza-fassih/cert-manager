@@ -10,7 +10,8 @@ RestUtil.interceptors.response.use((response) => {
     return response;
   },
   (error) => {
-    if( error.response.status === 401 ) {
+    let statusCode = error.response.status
+    if( statusCode === 401 || statusCode === 403 ) {
       router.push('/login');
     }
     return Promise.reject(error);
