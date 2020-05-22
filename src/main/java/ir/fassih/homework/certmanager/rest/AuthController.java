@@ -4,10 +4,8 @@ import ir.fassih.homework.certmanager.rest.model.ActionResult;
 import ir.fassih.homework.certmanager.rest.model.LoginDto;
 import ir.fassih.homework.certmanager.service.auth.ManualSpringSecurityService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/rest/auth")
@@ -20,5 +18,16 @@ public class AuthController {
     public ActionResult<String> login(@RequestBody LoginDto dto ) {
         manualSpringSecurityService.doLogin( dto );
         return new ActionResult<>("login successful");
+    }
+
+    @GetMapping("/info")
+    public UserDetails getAuthInfo() {
+        return manualSpringSecurityService.getCurrentUser();
+    }
+
+    @GetMapping("/logout")
+    public ActionResult<String> logout() {
+        manualSpringSecurityService.doLogout();
+        return new ActionResult<>("logout successful");
     }
 }
