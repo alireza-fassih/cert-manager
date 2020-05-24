@@ -10,7 +10,11 @@ let router = new Router({
       path: '/login',
       name: 'login',
       component: () => import('./components/Login.vue')
-    },
+    }, {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('./components/Admin.vue')
+    }
   ]
 });
 

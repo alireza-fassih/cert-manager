@@ -1,0 +1,56 @@
+<template>
+  <v-app id="inspire">
+    <MainNavigation ref="navigation" />
+
+    <v-app-bar color="blue-grey" dark fixed app clipped-right>
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon @click.stop="toggleNavigation"></v-app-bar-nav-icon>
+      <v-toolbar-title>Toolbar</v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <v-container fluid fill-height>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+
+    <v-footer color="blue-grey" class="white--text" app>
+      <span>Vuetify</span>
+      <v-spacer></v-spacer>
+      <span>&copy; 2017</span>
+    </v-footer>
+  </v-app>
+</template>
+
+<script>
+import RestUtil from "../lib/RestUtil";
+
+import MainNavigation from "./MainNavigation";
+
+export default {
+  components: {
+    MainNavigation
+  },
+  data: () => ({}),
+  beforeRouteEnter: function(to, from, next) {
+    RestUtil.get("/rest/auth/info").then(resp => {
+      console.log("resp: ", resp, " this: ", this);
+      next();
+    });
+  },
+  methods: {
+    toggleNavigation: function() {
+      this.$refs.navigation.toggleNav();
+    }
+  },
+  props: {
+    source: String
+  }
+};
+</script>
+
+<style>
+.v-toolbar__content {
+    float: right;
+}
+</style>

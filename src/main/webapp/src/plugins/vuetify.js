@@ -3,6 +3,7 @@ import Vuetify from 'vuetify/lib';
 
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'vazir-font/dist/font-face.css'
+import '@mdi/font/css/materialdesignicons.css'
 import '../style/styles.sass'
 
 Vue.use(Vuetify);
