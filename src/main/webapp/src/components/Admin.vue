@@ -8,8 +8,8 @@
       <v-toolbar-title>Toolbar</v-toolbar-title>
     </v-app-bar>
 
-    <v-content>
-      <v-container fluid fill-height>
+    <v-content class="pa-0">
+      <v-container  >
         <router-view></router-view>
       </v-container>
     </v-content>

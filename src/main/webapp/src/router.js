@@ -13,6 +13,12 @@ let router = new Router({
     }, {
       path: '/admin',
       name: 'admin',
+      children: [
+        {
+          path: 'users',
+          component: () => import('./components/UserList.vue')
+        }
+      ],
       component: () => import('./components/Admin.vue')
     }
   ]
