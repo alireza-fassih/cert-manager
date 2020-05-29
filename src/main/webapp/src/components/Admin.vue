@@ -34,7 +34,7 @@ export default {
   data: () => ({}),
   beforeRouteEnter: function(to, from, next) {
     RestUtil.get("/rest/auth/info").then(resp => {
-      console.log("resp: ", resp, " this: ", this);
+      console.log( resp.data )
       next();
     });
   },

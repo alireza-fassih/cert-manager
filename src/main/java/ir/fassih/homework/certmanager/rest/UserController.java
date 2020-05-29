@@ -36,4 +36,10 @@ public class UserController {
                 .collect(Collectors.toList());
     }
 
+
+    @DeleteMapping("/{id}")
+    public ActionResult<String> delete(@PathVariable("id") long id) {
+        userManager.delete(id);
+        return new ActionResult<>("success");
+    }
 }
