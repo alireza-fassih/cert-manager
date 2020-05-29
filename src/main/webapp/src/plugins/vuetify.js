@@ -6,9 +6,18 @@ import 'vazir-font/dist/font-face.css'
 import '@mdi/font/css/materialdesignicons.css'
 import '../style/styles.sass'
 
+
+
+import fa from 'vuetify/es5/locale/fa'
+
 Vue.use(Vuetify);
+
 
 export default new Vuetify({
     iconfont: 'md',
-    rtl: 'true'
+    rtl: 'true',
+    lang: {
+        locales: { fa },
+        current: 'fa',
+    }
 });
