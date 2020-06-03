@@ -8,8 +8,10 @@ import ir.fassih.homework.certmanager.rest.model.ActionResult;
 import ir.fassih.homework.certmanager.rest.model.user.UserListDto;
 import ir.fassih.homework.certmanager.rest.model.user.UserSaveDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,8 +32,13 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public List<UserListDto> search() {
-        return userManager.search()
+    public List<UserListDto> search(
+            @RequestParam("query") String query,
+            @RequestParam(name = "db", required = false, defaultValue = "false") boolean disableBase64) {
+        if( !disableBase64 && StringUtils.hasText(query) ) {
+            query = new String(Base64.getDecoder().decode(query));
+        }
+        return userManager.searchByQuery(query)
                 .stream().map(UserDtoMapper.INSTANCE::userToUserListDto)
                 .collect(Collectors.toList());
     }

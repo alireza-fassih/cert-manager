@@ -56,8 +56,25 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cz.jirutka.rsql</groupId>
+			<artifactId>rsql-parser</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.tennaito</groupId>
+			<artifactId>rsql-jpa</artifactId>
+			<version>2.0.2</version>
 		</dependency>
 
 		<dependency>

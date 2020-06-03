@@ -16,5 +16,8 @@ public interface UserManager {
     @Transactional
     void delete(Long id);
 
+    @Transactional(readOnly = true)
+    List<UserEntity> searchByQuery(String query);
+
 }
 
