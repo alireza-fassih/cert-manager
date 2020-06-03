@@ -34,3 +34,27 @@ databaseChangeLog:
                   name: PASSWORD
                   value: $2a$04$t4smKHHhhFOrasYoYjTm4uuc0hy1o1SYqZkz9cMFPC6wttmkETFim
             tableName:  CERT_USER
+  - changeSet:
+      id: creating cert table
+      author: alireza.fassih
+      changes:
+        - createTable:
+            tableName:  CERT_CERTES
+            columns:
+                - column:
+                    name:  ID
+                    type:  int
+                    autoIncrement:  true
+                    constraints:
+                      primaryKey:  true
+                      nullable:  false
+                - column:
+                    name:  CODE
+                    type:  varchar(255)
+                    constraints:
+                      nullable:  false
+                - column:
+                    name:  IMG_DATA
+                    type:  BLOB
+                    constraints:
+                      nullable:  false

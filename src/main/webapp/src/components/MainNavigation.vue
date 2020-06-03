@@ -27,6 +27,7 @@ export default {
     isOpen: true,
     items: [
       { title: "Users", icon: "mdi-home-city", path: "users" },
+      { title: "Certs", icon: "mdi-home-city", path: "certs" },
     ]
   }),
   methods: {

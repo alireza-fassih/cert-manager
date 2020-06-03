@@ -10,6 +10,7 @@ import ir.fassih.homework.certmanager.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -48,13 +49,13 @@ public class UserManagerImpl implements UserManager {
         CriteriaQuery<UserEntity> criteria = builder.createQuery(UserEntity.class);
         Root<UserEntity> root = criteria.from(UserEntity.class);
 
-        RSQLVisitor<Predicate, EntityManager> visitor =
-                new JpaPredicateVisitor<UserEntity>().defineRoot(root);
-
-        Node rootNode = new RSQLParser().parse(query);
-
-        Predicate predicate = rootNode.accept(visitor, entityManager);
-        criteria.where(predicate);
+        if(StringUtils.hasText(query)) {
+            RSQLVisitor<Predicate, EntityManager> visitor =
+                    new JpaPredicateVisitor<UserEntity>().defineRoot(root);
+            Node rootNode = new RSQLParser().parse(query);
+            Predicate predicate = rootNode.accept(visitor, entityManager);
+            criteria.where(predicate);
+        }
 
         return entityManager.createQuery(criteria).getResultList();
     }

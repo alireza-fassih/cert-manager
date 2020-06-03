@@ -33,7 +33,7 @@ public class UserController {
 
     @GetMapping("/search")
     public List<UserListDto> search(
-            @RequestParam("query") String query,
+            @RequestParam(name = "query", required = false) String query,
             @RequestParam(name = "db", required = false, defaultValue = "false") boolean disableBase64) {
         if( !disableBase64 && StringUtils.hasText(query) ) {
             query = new String(Base64.getDecoder().decode(query));

@@ -13,10 +13,12 @@ let router = new Router({
     }, {
       path: '/admin',
       name: 'admin',
-      children: [
-        {
+      children: [ {
           path: 'users',
           component: () => import('./components/UserList.vue')
+        } , {
+          path: 'certs',
+          component: () => import('./components/CertList.vue')
         }
       ],
       component: () => import('./components/Admin.vue')
