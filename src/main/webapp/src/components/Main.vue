@@ -82,4 +82,10 @@ export default {
 
 
 <style>
+
+[hidden],
+template {
+  display: none;
+}
+
 </style>

@@ -1,4 +1,9 @@
 module.exports = {
+  css: {
+    extract: {
+      ignoreOrder: true
+    },
+  },
   "transpileDependencies": [
     "vuetify"
   ],
