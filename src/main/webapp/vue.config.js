@@ -3,11 +3,14 @@ module.exports = {
     "vuetify"
   ],
   "devServer": {
-      port: 3000,
-      proxy: {
-          "^/rest" : {
-              target: 'http://localhost:8080'
-          }
+    port: 3000,
+    proxy: {
+      "^/rest": {
+        target: 'http://localhost:8080'
+      },
+      "^/cert": {
+        target: 'http://localhost:8080'
       }
+    }
   }
 }

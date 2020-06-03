@@ -59,4 +59,9 @@ public class CertManagerImpl implements CertManager {
         return certRepository.findById(id).get();
     }
 
+    @Override
+    public CertEntity loadByCode(String code) {
+        return certRepository.findByCode(code);
+    }
+
 }

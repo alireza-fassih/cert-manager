@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CertRepository extends JpaRepository<CertEntity, Long> {
+
+    CertEntity findByCode(String code);
+
 }

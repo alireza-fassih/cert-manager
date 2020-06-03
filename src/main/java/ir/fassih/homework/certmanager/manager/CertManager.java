@@ -18,4 +18,9 @@ public interface CertManager {
 
     @Transactional(readOnly = true)
     CertEntity load(long id);
+
+
+    @Transactional(readOnly = true)
+    CertEntity loadByCode(String code);
+
 }

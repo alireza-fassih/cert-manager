@@ -22,6 +22,13 @@ let router = new Router({
         }
       ],
       component: () => import('./components/Admin.vue')
+    }, {
+      path: '/',
+      name: 'main',
+      component: () => import('./components/Main.vue')
+    },{
+      path: "*",
+      component: () => import('./components/NotFound.vue')
     }
   ]
 });

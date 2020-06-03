@@ -49,7 +49,7 @@ export default {
             this.alert.message = resp.data.message;
             this.alert.show = true;
             this.alert.type = "info";
-            this.$router.push("/admin");
+            this.$router.push("/admin/certs");
         })
         .catch( error => {
            this.onRequest = false;
