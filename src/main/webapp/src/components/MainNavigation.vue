@@ -26,8 +26,8 @@ export default {
   data: () => ({
     isOpen: true,
     items: [
-      { title: "Users", icon: "mdi-home-city", path: "users" },
-      { title: "Certs", icon: "mdi-home-city", path: "certs" },
+      { title: "گواهینامه‌ها", icon: "mdi-certificate-outline", path: "certs" },
+      { title: "کاربران", icon: "mdi-account", path: "users" },
     ]
   }),
   methods: {

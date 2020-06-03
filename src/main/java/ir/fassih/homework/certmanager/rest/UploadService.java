@@ -19,7 +19,7 @@ public class UploadService {
 
 
     @PostMapping("/{id:"+UUID_REGEX+"}")
-    public void handleFileUpload(@RequestParam("filepond") MultipartFile file, @PathVariable("id") String id) throws IOException {
+    public void handleFileUpload(@RequestParam("file") MultipartFile file, @PathVariable("id") String id) throws IOException {
         uploaderManager.saveUpload(id, file.getBytes());
     }
 

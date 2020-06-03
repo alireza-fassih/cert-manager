@@ -5,7 +5,7 @@
     <v-app-bar color="blue-grey" dark fixed app clipped-right>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click.stop="toggleNavigation"></v-app-bar-nav-icon>
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+      <v-toolbar-title>منو</v-toolbar-title>
     </v-app-bar>
 
     <v-content class="pa-0">
@@ -15,9 +15,9 @@
     </v-content>
 
     <v-footer color="blue-grey" class="white--text" app>
-      <span>Vuetify</span>
+      <span></span>
       <v-spacer></v-spacer>
-      <span>&copy; 2017</span>
+      <span></span>
     </v-footer>
   </v-app>
 </template>
