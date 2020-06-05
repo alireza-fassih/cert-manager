@@ -23,6 +23,10 @@ let router = new Router({
       ],
       component: () => import('./components/Admin.vue')
     }, {
+      name: 'showCert',
+      path: '/showCert/:code',
+      component: () => import('./components/CertView.vue')
+    }, {
       path: '/',
       name: 'main',
       component: () => import('./components/Main.vue')
