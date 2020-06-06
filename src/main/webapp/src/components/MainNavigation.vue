@@ -10,9 +10,12 @@
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
 
+
         <v-list-item-content>
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item-content>
+
+
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -26,8 +29,8 @@ export default {
   data: () => ({
     isOpen: true,
     items: [
-      { title: "گواهینامه‌ها", icon: "mdi-certificate-outline", path: "certs" },
-      { title: "کاربران", icon: "mdi-account", path: "users" },
+      { title: "Certificate list", icon: "mdi-certificate-outline", path: "certs" },
+      { title: "User list", icon: "mdi-account", path: "users" },
     ]
   }),
   methods: {

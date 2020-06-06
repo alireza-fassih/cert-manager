@@ -4,8 +4,8 @@
 
     <v-app-bar color="blue-grey" dark fixed app clipped-right>
       <v-spacer></v-spacer>
+      <v-toolbar-title>Toolbar</v-toolbar-title>
       <v-app-bar-nav-icon @click.stop="toggleNavigation"></v-app-bar-nav-icon>
-      <v-toolbar-title>منو</v-toolbar-title>
     </v-app-bar>
 
     <v-content class="pa-0">

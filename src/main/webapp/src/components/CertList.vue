@@ -5,7 +5,7 @@
         <template v-slot:top>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn color="primary" dark class="mb-2" v-on="on">ایجاد</v-btn>
+              <v-btn color="primary" dark class="mb-2" v-on="on">Create</v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -16,12 +16,12 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="12">
-                      <v-text-field v-model="editedItem.code" label="کد"></v-text-field>
+                      <v-text-field v-model="editedItem.code" label="Code"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="12">
                       <v-file-input
                         accept="image/*"
-                        label="فایل گواهینامه"
+                        label="Certificate"
                         v-model="image"
                         @change="uploadFile"
                       ></v-file-input>
@@ -35,8 +35,8 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">بستن</v-btn>
-                <v-btn color="blue darken-1" text @click="save" :disabled="onUpload">ذخیره</v-btn>
+                <v-btn color="blue darken-1" text @click="close">Close</v-btn>
+                <v-btn color="blue darken-1" text @click="save" :disabled="onUpload">Save</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -44,7 +44,7 @@
           <v-dialog v-model="showCertDialog" max-width="500px">
             <v-card>
               <v-card-title>
-                <span class="headline">مشاهده گواهینامه</span>
+                <span class="headline">View certificate</span>
               </v-card-title>
 
               <v-card-text>
@@ -59,7 +59,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">بستن</v-btn>
+                <v-btn color="blue darken-1" text @click="close">Close</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -82,11 +82,11 @@ export default {
   data: () => ({
     headers: [
       {
-        text: "کد",
+        text: "Code",
         value: "code"
       },
       {
-        text: "عملیات",
+        text: "Actions",
         value: "actions"
       }
     ],
@@ -97,7 +97,7 @@ export default {
       imageId: null
     },
     dialog: false,
-    formTitle: "ایجاد گواهینامه",
+    formTitle: "Create new certificate",
     onUpload: false,
     image: null,
     showCertDialog: false,

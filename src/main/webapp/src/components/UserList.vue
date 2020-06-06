@@ -10,7 +10,7 @@
         <template v-slot:top>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn color="primary" dark class="mb-2" v-on="on">ایجاد</v-btn>
+              <v-btn color="primary" dark class="mb-2" v-on="on">Create</v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -21,10 +21,10 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="12">
-                      <v-text-field v-model="editedItem.username" label="نام کاربری"></v-text-field>
+                      <v-text-field v-model="editedItem.username" label="Username"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="12">
-                      <v-text-field v-model="editedItem.password" type="password" label="گذرواژه"></v-text-field>
+                      <v-text-field v-model="editedItem.password" type="password" label="Password"></v-text-field>
                     </v-col>
                   </v-row>
                 </v-container>
@@ -32,8 +32,8 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">بستن</v-btn>
-                <v-btn color="blue darken-1" text @click="save">ذخیره</v-btn>
+                <v-btn color="blue darken-1" text @click="close">Close</v-btn>
+                <v-btn color="blue darken-1" text @click="save">Save</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -55,11 +55,11 @@ export default {
   data: () => ({
     headers: [
       {
-        text: "نام کاربری",
+        text: "Username",
         value: "username"
       },
       {
-        text: "عملیات",
+        text: "Actions",
         value: "actions"
       }
     ],
@@ -70,7 +70,7 @@ export default {
       password: null
     },
     dialog: false,
-    formTitle: "ایجاد کاربر"
+    formTitle: "Create new user"
   }),
   watch: {
     selectedItems: function(newOne, oldOne) {

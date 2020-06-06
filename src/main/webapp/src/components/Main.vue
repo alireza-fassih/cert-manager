@@ -8,20 +8,20 @@
             height="200px"
             src="https://via.placeholder.com/200C"
           >
-            <v-card-title>مشاهده گواهینامه</v-card-title>
+            <!-- <v-card-title>مشاهده گواهینامه</v-card-title> -->
           </v-img>
 
           <v-card-text class="text--primary">
             <v-text-field
               v-model="data.code"
               prepend-icon="mdi-certificate-outline"
-              label="کد گواهینامه"
+              label="Code"
               type="text"
             ></v-text-field>
           </v-card-text>
 
           <v-card-actions>
-            <v-btn @click="loadCert">مشاهده</v-btn>
+            <v-btn @click="loadCert">View</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

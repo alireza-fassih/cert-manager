@@ -5,16 +5,16 @@
       <v-alert v-model="alert.show" :type="alert.type">{{alert.message}}</v-alert>
       <v-card class="elevation-12">
         <v-toolbar dark color="success">
-          <v-toolbar-title>ورود با سامانه</v-toolbar-title>
+          <v-toolbar-title>Login</v-toolbar-title>
         </v-toolbar>
         <v-card-text>
           <v-form class="rtl">
-            <v-text-field v-model="data.username" prepend-icon="person" name="login" label="نام کاربری" type="text"></v-text-field>
-            <v-text-field v-model="data.password" id="password" prepend-icon="lock" name="password" label="گذرواژه" type="password"></v-text-field>
+            <v-text-field v-model="data.username" prepend-icon="person" name="login" label="Username" type="text"></v-text-field>
+            <v-text-field v-model="data.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
           </v-form>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="success" @click.stop="login" :loading="onRequest" >ورود</v-btn>
+          <v-btn color="success" @click.stop="login" :loading="onRequest" >Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
