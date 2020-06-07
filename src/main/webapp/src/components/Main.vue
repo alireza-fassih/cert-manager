@@ -1,12 +1,12 @@
 <template>
-  <v-container fluid fill-height>
+  <v-container fluid fill-height class="has-cert-background">
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
         <v-card class="elevation-12" >
           <v-img
             class="white--text align-end"
-            height="200px"
-            src="https://via.placeholder.com/200C"
+            height="300px"
+            :src="image.logo"
           >
             <!-- <v-card-title>مشاهده گواهینامه</v-card-title> -->
           </v-img>
@@ -34,6 +34,9 @@ export default {
   data: () => ({
     data: {
       code: null
+    },
+    image: {
+      logo: require('../assets/logo.png')
     }
   }),
   methods: {

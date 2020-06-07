@@ -5,7 +5,7 @@
         <template v-slot:top>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn color="primary" dark class="mb-2" v-on="on">Create</v-btn>
+              <v-btn class="mb-2" v-on="on">Create</v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -35,8 +35,8 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">Close</v-btn>
-                <v-btn color="blue darken-1" text @click="save" :disabled="onUpload">Save</v-btn>
+                <v-btn  text @click="close">Close</v-btn>
+                <v-btn  text @click="save" :disabled="onUpload">Save</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -59,7 +59,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">Close</v-btn>
+                <v-btn text @click="close">Close</v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>

@@ -1,10 +1,10 @@
 <template>
-<v-container fluid fill-height>
+<v-container fluid fill-height class="has-cert-background">
   <v-layout align-center justify-center>
     <v-flex xs12 sm8 md4>
       <v-alert v-model="alert.show" :type="alert.type">{{alert.message}}</v-alert>
       <v-card class="elevation-12">
-        <v-toolbar dark color="success">
+        <v-toolbar>
           <v-toolbar-title>Login</v-toolbar-title>
         </v-toolbar>
         <v-card-text>
@@ -14,7 +14,7 @@
           </v-form>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="success" @click.stop="login" :loading="onRequest" >Login</v-btn>
+          <v-btn @click.stop="login" :loading="onRequest" >Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
