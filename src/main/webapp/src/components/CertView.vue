@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height>
+  <v-container fluid fill-height class="has-cert-background">
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
         <v-snackbar v-model="snackbar">
