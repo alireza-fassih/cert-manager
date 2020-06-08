@@ -2,14 +2,19 @@
   <v-app id="inspire">
     <MainNavigation ref="navigation" />
 
-    <v-app-bar color="blue-grey" dark fixed app clipped-right>
-      <v-spacer></v-spacer>
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+    <v-app-bar color="blue-grey" dark fixed app clipped-left>
       <v-app-bar-nav-icon @click.stop="toggleNavigation"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Toolbar</v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <v-btn icon @click="logout">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content class="pa-0">
-      <v-container  >
+      <v-container>
         <router-view></router-view>
       </v-container>
     </v-content>
@@ -33,14 +38,18 @@ export default {
   },
   data: () => ({}),
   beforeRouteEnter: function(to, from, next) {
-    RestUtil.get("/rest/auth/info").then(resp => {
-      console.log( resp.data )
+    RestUtil.get("/rest/auth/info").then(() => {
       next();
     });
   },
   methods: {
     toggleNavigation: function() {
       this.$refs.navigation.toggleNav();
+    },
+    logout: function() {
+      RestUtil.get("/rest/auth/logout").then(() => {
+        this.$router.push("/login")
+      })
     }
   },
   props: {
@@ -50,7 +59,5 @@ export default {
 </script>
 
 <style>
-.v-toolbar__content {
-    float: right;
-}
+
 </style>
